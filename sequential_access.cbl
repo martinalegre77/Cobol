@@ -1,4 +1,3 @@
-      *
       * Author: Martin Alegre
       * Date: 02/09/24
       * Purpose: Archivos secuenciales
@@ -27,11 +26,8 @@
              02 EmpGender        PIC X.
        PROCEDURE DIVISION.
        MAIN.
-      *    Abrir el fichero para INPUT
            OPEN INPUT EmployeeFile
-      *    Lectura del buffer
            READ EmployeeFile
-      *    Si está vacío no hace nada
                AT END SET EndOfEmployeeFile TO TRUE
            END-READ.
            PERFORM UNTIL EndOfEmployeeFile
