@@ -8,7 +8,7 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
            SELECT StockFile
-           ASSIGN TO "F:\Documentos\Cobol\clase8\GadgetStock.dat"
+           ASSIGN TO "GadgetStock.dat"
            ORGANIZATION IS LINE SEQUENTIAL.
        DATA DIVISION.
        FILE SECTION.
