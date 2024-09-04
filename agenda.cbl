@@ -46,9 +46,7 @@
        MAIN.
       *    Abrir el fichero para INPUT
            OPEN INPUT AgendaFile
-      *    Lectura del buffer
            READ AgendaFile
-      *    Si está vacío no hace nada
                AT END SET EndOfAgendaFile TO TRUE
            END-READ.
            PERFORM UNTIL EndOfAgendaFile
