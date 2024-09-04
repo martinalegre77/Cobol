@@ -1,9 +1,7 @@
-      *
       * Author: Martin Alegre
       * Date: 03/09/24
       * Purpose: Archivos secuenciales
       * Type: cbl
-      *
        IDENTIFICATION DIVISION.
        PROGRAM-ID. CLASE-No-7-15.
        ENVIRONMENT DIVISION.
@@ -43,22 +41,21 @@
        WORKING-STORAGE SECTION.
        77 WS-PerTitulo         PIC X(6).
        PROCEDURE DIVISION.
-       MAIN.
-      *    Abrir el fichero para INPUT
+       MAIN-PROCEDURE.
            OPEN INPUT AgendaFile
            READ AgendaFile
                AT END SET EndOfAgendaFile TO TRUE
            END-READ.
            PERFORM UNTIL EndOfAgendaFile
-               EVALUATE PerTitulo
-                   WHEN 1 MOVE "Sr." TO WS-PerTitulo
-                   WHEN 2 MOVE "Sra." TO WS-PerTitulo
-                   WHEN 3 MOVE "Ing." TO WS-PerTitulo
-                   WHEN 4 MOVE "Inga." TO WS-PerTitulo
-                   WHEN 5 MOVE "Dr." TO WS-PerTitulo
-                   WHEN 6 MOVE "Dra." TO WS-PerTitulo
-                   WHEN 7 MOVE "Lic." TO WS-PerTitulo
-                   WHEN 8 MOVE "Licda." TO WS-PerTitulo
+               EVALUATE TRUE
+                   WHEN Sr    MOVE "Sr."   TO WS-PerTitulo
+                   WHEN Sra   MOVE "Sra."  TO WS-PerTitulo
+                   WHEN Ing   MOVE "Ing."  TO WS-PerTitulo
+                   WHEN Inga  MOVE "Inga." TO WS-PerTitulo
+                   WHEN Dr    MOVE "Dr."   TO WS-PerTitulo
+                   WHEN Dra   MOVE "Dra."  TO WS-PerTitulo
+                   WHEN Lic   MOVE "Lic."  TO WS-PerTitulo
+                   WHEN Licda MOVE "Licda." TO WS-PerTitulo
                    WHEN OTHER MOVE "---" TO WS-PerTitulo
                END-EVALUATE
                DISPLAY WS-PerTitulo SPACE PerForname SPACE PerSurname
